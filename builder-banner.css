@@ -1,0 +1,86 @@
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg) translateX(0); }
+    50% { transform: rotate(-15deg) translateX(-5px); }
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+}
+
+@keyframes talking {
+    0%, 100% { d: path('M85 90 Q100 100 115 90'); }
+    50% { d: path('M85 95 Q100 85 115 95'); }
+}
+
+.cartoon-builder-banner {
+    position: fixed;
+    bottom: 20px;
+    right: -400px;
+    width: 175px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+.builder-character {
+    width: 100px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.builder-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.left-arm.wave {
+    animation: wave 1.5s ease-in-out infinite;
+}
+
+.builder-body.sway {
+    animation: sway 1.5s ease-in-out infinite;
+}
+
+.mouth.talking {
+    animation: talking 0.5s ease-in-out infinite;
+}
+
+.builder-message {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.builder-message p {
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+}
+
+.call-button {
+    background-color: rgba(76, 175, 80, 0.7);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.call-button:hover {
+    background-color: rgba(76, 175, 80, 0.9);
+}
+
+.cartoon-builder-banner.show {
+    right: 20px;
+}
